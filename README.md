@@ -3,23 +3,23 @@
 ## Build a Responsive Card Layout
 
 ### Objective:
-The goal of this exercise is to acquaint you with the foundational techniques of Flexbox, CSS Grid, and media queries by creating a responsive card layout. Upon completing this exercise, you should be adept at crafting adaptable layouts for various screen sizes.
+Introduce foundational techniques of Flexbox, CSS Grid, and media queries to craft a responsive card layout. By the end, learners should be able to construct adaptable layouts for various screen sizes.
 
 ### Step-by-step Instructions:
 
 #### 1. **HTML Structure**:
 - Create a new HTML file.
-- Inside the body, add a `div` with the class `card-container`.
-- Inside the `card-container`, create three `divs` with the class `card`.
-- Each `card` will contain:
+- Within the body, add a `div` with the class `card-container`.
+- Within the `card-container`, add three `divs` each with the class `card`.
+- Each `card` should contain:
   - An `h2` for the card title.
   - A `p` for the card description.
   - An `img` for the card image.
 
-**Explanation**: This structure serves as the scaffold for our layout. The outer `card-container` will manage the placement of individual cards, while each `card` will host a title, description, and image.
+**Explanation**: This structure lays the foundation for our design. The `card-container` will manage individual card placements, while each `card` houses a title, description, and image.
 
 #### 2. **Initial Styling**:
-Add the following styles to your CSS:
+In your CSS, apply the following styles:
 
 ```css
 * {
@@ -39,10 +39,10 @@ body {
 }
 ```
 
-**Explanation**: This basic styling ensures a consistent appearance for the cards. The `box-sizing` rule makes it simpler to size elements, as it incorporates padding and border into the element's total width and height.
+**Explanation**: This primary styling ensures the cards have a consistent look. The `box-sizing` rule simplifies element sizing by integrating padding and border into the total width and height.
 
 #### 3. **Flexbox for Card Container**:
-Append the following CSS:
+Add this CSS:
 
 ```css
 .card-container {
@@ -51,10 +51,10 @@ Append the following CSS:
 }
 ```
 
-**Explanation**: By employing Flexbox on the `card-container`, its child elements (cards) will naturally line up in a row. The property `justify-content: space-between;` ensures that the cards distribute themselves evenly across the container, maximizing space between them.
+**Explanation**: Using Flexbox on the `card-container` naturally aligns its child cards in a row. The `justify-content: space-between;` maximizes space between each card.
 
 #### 4. **CSS Grid for Card Content**:
-Update the `.card` class in your CSS:
+Modify the `.card` class in your CSS:
 
 ```css
 .card {
@@ -64,10 +64,28 @@ Update the `.card` class in your CSS:
 }
 ```
 
-**Explanation**: Shifting the `card`'s display to grid allows for precise arrangement of its contents using CSS Grid. The rows for title, description, and image are defined with `grid-template-rows`, ensuring a dynamic, adaptable layout for each card's contents.
+**Explanation**: By converting the `card` display to grid, you can organize its contents more effectively. `grid-template-rows` defines rows for the title, description, and image, ensuring a flexible layout.
 
-#### 5. **Media Query for Responsiveness**:
-Incorporate the following media query to your CSS:
+#### 5. **Fit the Image in the Card**:
+
+Adjust the `.card img` selector:
+
+```css
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+}
+```
+
+**Explanation**: This makes the image in each card responsive. `object-fit: cover;` ensures the image scales and crops to fill the card without altering its original aspect ratio.
+
+**Outcome**: After implementing the CSS rules, your layout should resemble this visual: ![Normal Screen Result](https://github.com/techcodedu/mediaqueryexercises/blob/main/normal%20screen.PNG).
+
+#### 6. **Media Query for Responsiveness**:
+
+Incorporate this media query:
 
 ```css
 @media (max-width: 768px) {
@@ -83,19 +101,24 @@ Incorporate the following media query to your CSS:
 }
 ```
 
-**Explanation**: This media query activates when the viewport width drops below 768px, typically on tablets and mobile devices. Within this rule, the cards will stack vertically due to the `flex-direction: column;`, and each card will expand to fit the container's full width.
+**Explanation**: The media query activates for screens below 768px, typical for tablets and mobile devices. Cards stack vertically with `flex-direction: column;` and stretch across the container width.
 
-#### 6. **Fit the Image in the Card using `object-fit`**:
+**Outcome**: On screens under 768 pixels, your layout should align with this visual: ![Smartphone Screen Result](https://github.com/techcodedu/mediaqueryexercises/blob/main/smartphone.PNG).
 
-Amend the `.card img` selector in your CSS:
+---
 
-```css
-.card img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    display: block;
-}
-```
+# Challenge:
 
-**Explanation**: This rule ensures images within cards adapt responsively. The `object-fit: cover;` property ensures the image scales and crops (if necessary) to cover the entire card without distorting its aspect ratio.
+## Redesign the Card Layout for Mobile
+
+### Objective:
+Using the knowledge you've gained, modify the `.card` layout for screens less than 768px. You're not being given the exact steps. Instead, you have the desired outcome and a reference to guide your CSS changes.
+
+**Expected Result**: Your card layout for smaller screens should look like this visual: ![Challenge Result](https://github.com/techcodedu/mediaqueryexercises/commit/b58919d8e63f76fc759c7fe5e51ed3fee5848ce8).
+
+**Hints**:
+1. You'll continue working within the media query for screens below 768px.
+2. Make modifications to the `.card` layout using CSS Grid properties.
+3. Adjust elements within the card (`h2`, `p`, `img`) to achieve the expected layout.
+
+Good luck!
