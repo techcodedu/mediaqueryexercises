@@ -114,7 +114,7 @@ Incorporate this media query:
 ### Objective:
 Using the knowledge you've gained, modify the `.card` layout for screens less than 768px. You're not being given the exact steps. Instead, you have the desired outcome and a reference to guide your CSS changes.
 
-**Expected Result**: Your card layout for smaller screens should look like this visual: ![Challenge Result](https://github.com/techcodedu/mediaqueryexercises/commit/b58919d8e63f76fc759c7fe5e51ed3fee5848ce8).
+**Expected Result**: Your card layout for smaller screens should look like this visual:![Challenge Result](https://github.com/techcodedu/mediaqueryexercises/blob/main/exercise.PNG).
 
 **Hints**:
 1. You'll continue working within the media query for screens below 768px.
